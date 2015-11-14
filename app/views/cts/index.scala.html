@@ -1,0 +1,14 @@
+@(tools: List[Tool])
+
+@cts.main("Welcome to My Website") {
+
+
+
+<h3>Tool Description</h3>
+
+@for(tool <- tools) {
+<ul>
+    <li>@tool.title</li>
+    }
+</ul>
+}
