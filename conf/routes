@@ -5,7 +5,7 @@
 
 # Home page
 GET     /                                controllers.Website.index()
-GET    /users                          controllers.Website.signup()
+GET    /users                          controllers.Website.register()
 
 GET     /tools/:id                       controllers.Website.show(id: Long)
 #POST    /tools                           controllers.Website.create()

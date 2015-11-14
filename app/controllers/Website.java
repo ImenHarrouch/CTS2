@@ -36,14 +36,14 @@ public class Website extends Controller {
     }
 
 
-    public Result signup()  {
+    public Result register()  {
 
         User user = Form.form(User.class).bindFromRequest().get();
 
         user.save();
         flash ("success", "Your account has been created successfully" + user.name);
 
-        return ok(views.html.cts.signup());
+        return redirect(routes.Website.register());
     }
 
 
