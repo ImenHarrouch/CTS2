@@ -43,7 +43,7 @@ public class Website extends Controller {
         user.save();
         flash ("success", "Your account has been created successfully" + user.name);
 
-        return redirect(routes.Website.register());
+        return ok(views.html.cts.register.render());
     }
 
 
