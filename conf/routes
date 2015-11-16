@@ -4,14 +4,18 @@
 
 
 # Home page
-GET     /                                controllers.Website.index()
-GET    /users                          controllers.Website.register()
+#GET /                                        controllers.Application.index()
 
-GET     /users/:id                       controllers.Website.show(id: Long)
-#POST    /tools                           controllers.Website.create()
+GET           /                                controllers.Website.index()
+GET           /users                           controllers.Website.register()
 
+POST          /tools1                          controllers.Website.tools()
+GET           /buy                             controllers.Website.buy()
 
-#GET     /users/:id                      controllers.Website.login(id: Long)
+POST          /tools                           controllers.Website.payeeinfo()
+POST          /tools/confirmation              controllers.Website.confirmation()
+# POST        /tools/:id                       controllers.Website.show(id:Long)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

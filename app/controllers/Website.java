@@ -47,14 +47,48 @@ public class Website extends Controller {
     }
 
 
-    //public Result login(Long id) {
-      //  User user = User.find.byId(id);
+    public Result tools(){
 
-        //if (user == null)
-          //  return notFound("Not Found\n");
-       // else
-            //return ok(views.html.cts.index());
-    //}
+        return ok(views.html.cts.tools.render());
+    }
+
+    public Result buy(){
+
+        return ok(views.html.cts.buy.render());
+        //   return ok("buy page");
+    }
+
+    public Result payeeinfo(){
+
+        return ok(views.html.cts.payee_info.render());
+    }
+
+    public Result confirmation() {
+        return ok(views.html.cts.confirmation.render());
+    }
+
+
+
+  /* public Result signup()  {
+
+        User user = Form.form(User.class).bindFromRequest().get();
+
+        user.save();
+        flash ("success", "Your account has been created successfully" + user.name);
+
+        return ok(views.html.cts.signup());
+    }
+
+
+    //public Result login(Long id) {
+    //  User user = User.find.byId(id);
+
+    //if (user == null)
+    //  return notFound("Not Found\n");
+    // else
+    //return ok(views.html.cts.index());
+    //}*/
+
 
 
 }

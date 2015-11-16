@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tools</title>
+    <h1 style = "color: green" align="center">Community Tool Sharing</h1>
+</head>
+<body style="background-color: lightyellow">
+<form action="@routes.Website.buy()" method="get" ><br><br><br><br><br>
+    <div class="left">
+        <select style="font-size:90%">
+            <option value="id0" selected="selected">Select by category</option>
+            <option value="id1">Tools for garden</option>
+            <option value="id2">Tools for kitchen</option>
+            <option value="id3">Tools for cars</option>
+            <option value="id4">Tools for indoors</option>
+        </select>
+    </div>
+
+    <br>
+    <a href="@routes.Website.buy()">
+        <img src="@routes.Assets.versioned("images/download.png")"></img>
+    </a>
+</form>
+</body>
+</html>A
