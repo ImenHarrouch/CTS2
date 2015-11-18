@@ -4,6 +4,9 @@ import views.html.*;
 import models.*;
 import play.mvc.*;
 import play.data.Form;
+import play.data.DynamicForm;
+import play.*;
+import static play.data.Form.form;
 
 import java.util.List;
 
@@ -47,6 +50,25 @@ public class Website extends Controller {
     }
 
 
+//    public Result login() {
+//        DynamicForm userForm = form().bindFromRequest();
+//        String username = userForm.data().get("username");
+//        String password = userForm.data().get("password");
+//
+//        User user = User.find.where().eq("username", username).findUnique();
+//
+//        if(user != null && user.authenticate(password)) {
+//            session("user_id", user.id.toString());
+//            flash("success", "Welcome " + user.username);
+//        } else {
+//            flash("error", "Invalid login. Check your credentials information please.");
+//        }
+//
+//        return redirect(routes.Website.index());
+//
+//    }
+
+
     public Result tools(){
 
         return ok(views.html.cts.tools.render());
@@ -64,6 +86,7 @@ public class Website extends Controller {
     }
 
     public Result confirmation() {
+
         return ok(views.html.cts.confirmation.render());
     }
 
