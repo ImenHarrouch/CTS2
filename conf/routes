@@ -6,9 +6,9 @@
 # Home page
 #GET /                                        controllers.Application.index()
 
-GET           /                                controllers.Website.index()
-GET           /users                           controllers.Website.register()
-#POST           /login                           controllers.Website.login()
+GET            /                               controllers.Website.index()
+POST           /register                       controllers.Website.register()
+POST           /login                          controllers.Website.login()
 
 POST          /tools1                          controllers.Website.tools()
 GET           /buy                             controllers.Website.buy()

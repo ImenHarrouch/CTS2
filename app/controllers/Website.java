@@ -50,23 +50,23 @@ public class Website extends Controller {
     }
 
 
-//    public Result login() {
-//        DynamicForm userForm = form().bindFromRequest();
-//        String username = userForm.data().get("username");
-//        String password = userForm.data().get("password");
-//
-//        User user = User.find.where().eq("username", username).findUnique();
-//
-//        if(user != null && user.authenticate(password)) {
-//            session("user_id", user.id.toString());
-//            flash("success", "Welcome " + user.username);
-//        } else {
-//            flash("error", "Invalid login. Check your credentials information please.");
-//        }
-//
-//        return redirect(routes.Website.index());
-//
-//    }
+    public Result login() {
+        DynamicForm userForm = form().bindFromRequest();
+        String username = userForm.data().get("username");
+        String password = userForm.data().get("password");
+
+        User user = User.find.where().eq("username", username).findUnique();
+
+        if (user != null && user.authenticate(password)) {
+            session("user_id", user.id.toString());
+            flash("success", "Welcome " + user.username);
+        } else {
+            flash("error", "Invalid login. Check your credentials information please.");
+        }
+
+        return redirect(routes.Website.index());
+    }
+
 
 
     public Result tools(){
