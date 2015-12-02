@@ -19,14 +19,7 @@ public class Website extends Controller {
 
 
 
-    //public Result create(){
-        //Tool tool = Form.form(Tool.class).bindFromRequest().get();
-        //tool.save();
-        //flash ("success", "Saved new tool" + tool.title);
-        //return redirect(routes.Website.show(tool.id));
-    //}
-
-    public Result show(Long id) {
+   /* public Result show(Long id) {
          //Query the database for a Tool with this id
         Tool tool = Tool.find.byId(id);
 
@@ -36,15 +29,26 @@ public class Website extends Controller {
         else
             return ok(views.html.cts.show.render(tool));
 
+    }*/
+
+    //post
+    public Result register(){
+        return null;
     }
 
+    //get
+    public Result registerUI()  {
 
-    public Result register()  {
+        /*DynamicForm userForm = form().bindFromRequest();
+        String username = userForm.data().get("username");
+        String password = userForm.data().get("password");
 
-        User user = Form.form(User.class).bindFromRequest().get();
+        User user = new User();
+        user.name = username;
+        user.username = username;
 
-        user.save();
-        flash ("success", "Your account has been created successfully" + user.name);
+        userForm.save();
+        flash ("success", "Your account has been created successfully" + username);*/
 
         return ok(views.html.cts.register.render());
     }
@@ -64,7 +68,7 @@ public class Website extends Controller {
             flash("error", "Invalid login. Check your credentials information please.");
         }
 
-        return redirect(routes.Website.index());
+        return ok(views.html.cts.login.render());
     }
 
 
@@ -89,29 +93,6 @@ public class Website extends Controller {
 
         return ok(views.html.cts.confirmation.render());
     }
-
-
-
-  /* public Result signup()  {
-
-        User user = Form.form(User.class).bindFromRequest().get();
-
-        user.save();
-        flash ("success", "Your account has been created successfully" + user.name);
-
-        return ok(views.html.cts.signup());
-    }
-
-
-    //public Result login(Long id) {
-    //  User user = User.find.byId(id);
-
-    //if (user == null)
-    //  return notFound("Not Found\n");
-    // else
-    //return ok(views.html.cts.index());
-    //}*/
-
 
 
 }

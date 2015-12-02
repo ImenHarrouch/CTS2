@@ -5,9 +5,7 @@ import play.mvc.Http;
 import play.mvc.Result;
 import play.mvc.Security;
 
-/**
- * Created by Imen on 12/1/2015.
- */
+
    public class UserAuth extends Security.Authenticator {
 
         // When return is null, Authentication failed

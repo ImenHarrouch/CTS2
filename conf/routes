@@ -7,8 +7,9 @@
 #GET /                                        controllers.Application.index()
 
 GET            /                               controllers.Website.index()
+GET            /registerUI                      controllers.Website.registerUI()
 POST           /register                       controllers.Website.register()
-POST           /login                          controllers.Website.login()
+GET           /login                          controllers.Website.login()
 
 POST          /tools1                          controllers.Website.tools()
 GET           /buy                             controllers.Website.buy()
