@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:align="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>buytool</title>
-    <h1 style = "color: green" align="center">Community Tool Sharing</h1>
+@(tool:Tool)
 
-</head>
-<br><br><br>
-<body style="background-color:lightyellow"  >
-<form action="@routes.Website.payeeinfo()" method="post" align="left" >
-    <label style="font-size:90%" >Owner of the Tool : </label><br><br>
-    <label>Description : </label><br><br>
-    <label>Price : </label><br><br>
-    <label>Brand : </label><br><br>
-    <label>Model No. :</label><br><br>
-    <label>Condition of the Tool :</label><br><br>
-    <label>Year : </label><br><br>
-    <label>Tool ID : </label><br><br>
-    Quantity : <input type ="text" name="qty" style="font-size:50%"><br><br>
-
-    <button style="font-size:90%">BUY</button>
+@main("tools"){
+<h1 align="center">Community Tool Sharing</h1>
+<body style="background-color:lightyellow"  ><br><br>
+<form action="@routes.Website.payeeinfo()" method="get">
+    <center>
+    <label style="font-size:120%"><b>  Tool ID : </b></label>           @tool.name<br><br>
+    <label style="font-size:120%" ><b> Owner of the Tool :</b> </label> @tool.owner<br><br>
+    <label style="font-size:120%"><b>  Description : </b> </label>      @tool.description<br><br>
+    <label style="font-size:120%"><b>  Tool Category : </b> </label>    @tool.category<br><br>
+    <br><br>
+    <br><br>
+    <button style="font-size:90%">Borrow</button>
+        </center>
 </form>
 
 
 
 </body>
-</html>
+}

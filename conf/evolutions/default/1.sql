@@ -3,20 +3,30 @@
 
 # --- !Ups
 
-create table tool (
+create table tools (
   id                        bigserial not null,
-  title                     varchar(255),
-  price                     varchar(255),
+  name                      varchar(255),
   description               varchar(255),
   owner                     varchar(255),
-  constraint pk_tool primary key (id))
+  category                  varchar(255),
+  comment                   varchar(255),
+  toollist                  varchar(255),
+  constraint pk_tools primary key (id))
+;
+
+create table toolcategory (
+  cid                       bigserial not null,
+  cname                     varchar(255),
+  constraint pk_toolcategory primary key (cid))
 ;
 
 create table users (
   id                        bigserial not null,
-  name                      varchar(255),
   username                  varchar(255),
   password_hash             varchar(255),
+  firstname                 varchar(255),
+  lastname                  varchar(255),
+  address                   varchar(255),
   email                     varchar(255),
   phone                     varchar(255),
   constraint uq_users_username unique (username),
@@ -28,7 +38,9 @@ create table users (
 
 # --- !Downs
 
-drop table if exists tool cascade;
+drop table if exists tools cascade;
+
+drop table if exists toolcategory cascade;
 
 drop table if exists users cascade;
 

@@ -17,13 +17,19 @@ public class User extends Model {
     @Id
     public Long id;
 
-    public String name;
 
     @Constraints.Required
     @Column(unique=true)
     public String username;
 
     public String password_hash;
+
+
+    public String firstname;
+
+    public String lastname;
+
+    public String address;
 
     public String email;
 
@@ -35,33 +41,38 @@ public class User extends Model {
 
     // NOT FOR PRODUCTION - must ensure this is a valid user first. I have not done that.
 
-    public boolean authenticate(String password){
+    public boolean authenticate(User user, String password)
+    {
+        if(user!=null){
+        return BCrypt.checkpw(password, user.password_hash);
+    }
+    else {
+            return false;
+        }
+        }
 
 
-        return BCrypt.checkpw(password, this.password_hash);
+    public static User createUser(String username, String password){
+
+
+             // requirements for username and password
+             if(password==null || username==null || password.length()<8)
+             {
+                     return null;
              }
 
 
-                 public static User createUser(String name, String username, String password){
+             // create a password hash
+             String passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
+             // create a new user instance in the database
+             // assign the username and passwordHash to the newly created user
+             User user = new User();
+
+             user.username = username;
+             user.password_hash = passwordHash;
 
 
-                 // requirements for username and password
-                 if(password==null || username==null || password.length()<8){
-                         return null;
-                     }
-
-
-                 // create a password hash
-                 String passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
-                 // create a new user instance in the database
-                 // assign the username and passwordHash to the newly created user
-                 User user = new User();
-                 user.name = name;
-                 user.username = username;
-                 user.password_hash = passwordHash;
-
-
-                 return user;
-            }
+             return user;
+        }
      }
 

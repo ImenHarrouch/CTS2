@@ -7,40 +7,90 @@
 <body style="background-color:lightyellow">
 <h1><center>Payee Information</center></h1>
 <br>
-<center><form action="@routes.Website.confirmation()" style="font-size:100%" method="post">
-    <div style class="center">
-        First Name : <input type = "text" name="firstname" style="font-size:90%" >
+<form action="@routes.Website.confirmation()" style="font-size:100%" method="post">
+    <center>
+        <div class="form-group">
+            <label for="firstname" class="control-label">First Name</label>
+            <div class="control-label">
+
+                <input type="text" id="firstName" name="firstname">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="lastname" class="control-label">Last Name</label>
+            <div class="control-label">
+
+                <input type="text" id="lastName" name="lastname">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="address" class="control-label">Address</label>
+            <div class="control-label">
+
+                <input type="text" id="address" name="address">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="city" class="control-label">City</label>
+            <div class="control-label">
+
+                <input type="text" id="city" name="city">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="state" class="control-label">State</label>
+            <div class="control-label">
+
+                <input type="text" id="state" name="state">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="zipcode" class="control-label">Zip Code</label>
+            <div class="control-label">
+
+                <input type="text" id="zipcode" name="zipcode">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="email" class="control-label">Email</label>
+            <div class="control-label">
+
+                <input type="email" id="email" name="email">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="phone" class="control-label">Phone Number</label>
+            <div class="control-label">
+                <input type="tel" id="phone" name="phone">
+            </div>
+        </div>
+
         <br><br>
-        Last Name : <input type = "text" name="lastname" style="font-size:90%">
-        <br><br>
-        Date of Birth : <input type ="text" name="dob" style="font-size:90%">
-        <br><br>
-        Address : <input type = "text" name="add" style="font-size:90%">
-        <br><br>
-        City : <input type ="text" name="city" style="font-size:90%">
-        <br><br>
-        State : <input type ="text" name="state" style="font-size:90%">
-        <br><br>
-        Zip : <input type ="text" name="zip" style="font-size:90%">
-        <br><br>
-        Phone Number : <input type ="text" name="cellnumber" style="font-size:90%">
-        <br><br>
-        Shipping Address : <input type ="text" name="sadd" style="font-size:90%">
-        <br><br>
-        Card Type : <input type="radio" name="debit" value="Debit"> Debit
-        <input type ="radio" name=credit" value="credit">Credit
-        <br><br>
-        Card Expiration Date :
-        From  <input type="text" name="fromdate" >
-        To <input type="text" name="todate">
-        <br><br>
-        CVV : <input type="text" name="cvv">
-        <br><br>
-        Amount : <input type="text" name="amt" >
-        <br><br><br>
-        <button style="font-size:90%">Submit</button>
-    </div>
-</form></center>
+        <button type="submit" class="btn">Submit</button>
+
+        </center>
+</form>
 </body>
 
 </html>
