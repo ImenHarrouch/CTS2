@@ -49,14 +49,14 @@ public class User extends Model {
     else {
             return false;
         }
-        }
+    }
 
 
     public static User createUser(String username, String password){
 
 
              // requirements for username and password
-             if(password==null || username==null || password.length()<8)
+             if(password==null || username==null && password.length()<8)
              {
                      return null;
              }

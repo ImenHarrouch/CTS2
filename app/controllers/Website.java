@@ -41,26 +41,32 @@ public class Website extends Controller {
         DynamicForm userForm = form().bindFromRequest();
         String username = userForm.data().get("username");
         String password = userForm.data().get("password");
-        String firstname = userForm.data().get("firstname");
+       /* String firstname = userForm.data().get("firstname");
         String lastname = userForm.data().get("lastname");
         String email = userForm.data().get("email");
         String phone = userForm.data().get("phone");
-        String address = userForm.data().get("address");
+        String address = userForm.data().get("address");*/
 
 
-        User user = new User();
+        User user = User.createUser(username,password);
+
+        if(user == null) {
+            flash("error", "Invalid user");
+            return redirect(routes.Website.welcome());
+        }
 
 
-        user.username = username;
+        /*user.username = username;
         user.password_hash = password;
         user.firstname = firstname;
         user.lastname = lastname;
         user.email = email;
         user.phone = phone;
-        user.address = address;
+        user.address = address;*/
 
         user.save();
-        flash ("success", "Your account has been created successfully" + username);
+        flash("success", "Welcome new user " + user.username);
+        session("user_id", user.id.toString());
 
 
         return redirect(routes.Website.index());
