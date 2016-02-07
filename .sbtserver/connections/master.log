@@ -1,0 +1,13 @@
+New log file opened at Sun Feb 07 17:01:28 EST 2016 by 4012@Imen
+Taking next connection to: 54644
+New client attempting to connect on port: 54645-54644
+  Address = /10.0.1.9:54644
+This client on port 54645 has uuid 3f78b502-715f-4801-baeb-37eecc0fca94 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-3f78b502-715f-4801-baeb-37eecc0fca94
+Taking next connection to: 54644
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 54644
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 54644

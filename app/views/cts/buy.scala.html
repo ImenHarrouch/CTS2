@@ -1,21 +1,35 @@
 @(tool:Tool)
 
 @main("tools"){
-<h1 align="center">Community Tool Sharing</h1>
+<h2 align="center" style="color:green">Details of the Tool</h2>
 <body style="background-color:lightyellow"  ><br><br>
-<form action="@routes.Website.payeeinfo()" method="get">
+<form action="@routes.Tools.payeeinfo()" method="get">
     <center>
-    <label style="font-size:120%"><b>  Tool ID : </b></label>           @tool.name<br><br>
-    <label style="font-size:120%" ><b> Owner of the Tool :</b> </label> @tool.owner<br><br>
-    <label style="font-size:120%"><b>  Description : </b> </label>      @tool.description<br><br>
-    <label style="font-size:120%"><b>  Tool Category : </b> </label>    @tool.category<br><br>
-    <br><br>
-    <br><br>
-    <button style="font-size:90%">Borrow</button>
-        </center>
+        <label style="font-size:120%"><b>  Tool Name : </b></label>         @tool.name<br><br>
+        <label style="font-size:120%" ><b> Owner of the Tool :</b> </label> @tool.owner<br><br>
+        <label style="font-size:120%"><b>  Description : </b> </label>      @tool.description<br><br>
+        <label style="font-size:120%"><b>  Tool Category : </b> </label>    @tool.category<br><br>
+        <br>
+
+        <button style="font-size:90%; width:30 px; height:50px"><b>Borrow</b></button> <br> <br>
+        <!--<a href="@routes.Search.viewcomment(tool.id)">View Comments</a>-->
+
+    </center>
 </form>
 
+<br>
+<center>
+<h3 style="color:blue">Comments</h3>
+<ul>
 
+    <p>@tool.comment</p>
+
+
+</ul>
+    </center>
 
 </body>
+
+
+
 }

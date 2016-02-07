@@ -23,7 +23,7 @@ import play.mvc.Security;
         public Result onUnauthorized(final Http.Context ctx) {
             ctx.flash().put("error",
                     "Nice try, but you need to log in first!");
-            return redirect(routes.Website.index());
+            return redirect(routes.Users.index());
         }
     }
 
